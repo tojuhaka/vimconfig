@@ -253,10 +253,13 @@ import sys
 import vim
 parts = os.getcwd().split("/")
 for i in range(len(parts)):
-    omelette = "%s/parts/omelette" % "/".join(parts[0:i+1])
+    omelette = "%s/parts/omelette" % "/".join(parts[0:i + 1])
     if os.path.isdir(omelette):
         os.environ["PYTHONPATH"] = omelette
         vim.command(r"set path+=%s" % omelette)
+    tags = "%s/tags" % "/".join(parts[0:i + 1])
+    if os.path.isfile(tags):
+        vim.command(r"set tags=%s" % tags)
 EOF
 let g:pom_key_open='<leader>M'
 
