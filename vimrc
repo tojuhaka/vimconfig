@@ -262,7 +262,7 @@ let g:pom_key_open='<leader>M'
 
 " TaskList
 map <leader>td <Plug>TaskList
-
+let g:tlTokenList = ["FIXME", "TODO", "XXX", "WONTFIX"]
 
 " Buffer revision history
 map <leader>G :GundoToggle<CR>
@@ -444,3 +444,6 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
+" Highlight long lines
+set colorcolumn=80
