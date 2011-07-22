@@ -39,7 +39,6 @@ endif
 call pathogen#runtime_append_all_bundles()
 
 
-
 set ai
 set modeline
 set wildignore=*.swp,*.bak,*.pyc,*.class,eggs,develop-eggs,*.egg-info,*~,node_modules
@@ -92,10 +91,6 @@ au BufNewFile,BufRead *.md setfiletype markdown
 au BufNewFile,BufRead *.markdown setfiletype markdown
 
 
-
-
-
-
 " My status lines
 " set statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
 " With Syntastic
@@ -109,7 +104,6 @@ nnoremap <leader>e :Errors<CR>
 
 " Show statusline always
 set laststatus=2
-
 
 
 " change the terminal's title
@@ -163,16 +157,10 @@ set directory=~/.vim/tmp/swap// " swap files
 set backup " enable backup
 
 
-
-
-
 " * Search & Replace
 " make searches case-insensitive, unless they contain upper-case letters:
 set ignorecase
 set smartcase
-
-
-
 
 
 " do not store global and local values in a session
@@ -213,8 +201,6 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 
-
-
 " Execute file being edited
 map <F5> :! %:p <CR>
 
@@ -227,8 +213,6 @@ command Qa qa
 command QA qa
 command Wa wa
 command WA wa
-
-
 
 
 " :MM to save and make
@@ -253,12 +237,36 @@ command FoldAll set foldlevel=0
 command FoldOne set foldlevel=1
 
 
-
-
-" python stuff
+" Python stuff
 autocmd BufRead,BufNewFile *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 let python_highlight_all = 1
+let g:pep8_map='<leader>8'
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+" Add omelette path for python completion and pydoc
+py << EOF
+import os
+import sys
+import vim
+parts = os.getcwd().split("/")
+for i in range(len(parts)):
+    omelette = "%s/parts/omelette" % "/".join(parts[0:i+1])
+    if os.path.isdir(omelette):
+        os.environ["PYTHONPATH"] = omelette
+        vim.command(r"set path+=%s" % omelette)
+EOF
+let g:pom_key_open='<leader>M'
+
+" TaskList
+map <leader>td <Plug>TaskList
+
+
+" Buffer revision history
+map <leader>G :GundoToggle<CR>
+
 
 " Execute a selection of code (very cool!)
 " Use VISUAL to select a range and then hit ctrl-h to execute it.
@@ -272,8 +280,6 @@ map <C-h> :py EvaluateCurrentRange()<CR>
 
 " php
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
-
 
 
 " Hilight long lines
@@ -291,25 +297,18 @@ nmap Q gqap
 command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 
-
 " Clojure
 let g:clj_highlight_builtins=1      " Highlight Clojure's builtins
 let g:clj_paren_rainbow=1           " Rainbow parentheses'!
-
-
-
-
 
 
 " strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 
-
 "  to reselect the text that was just pasted so I can perform commands (like
 "  indentation) on it
 nnoremap <leader>v V`]
-
 
 
 "" Window management
@@ -318,7 +317,6 @@ command Vertical vertical sp
 
 " new horizontal split
 command Horizontal sp
-
 
 
 " Easily resize split windows with Ctrl+hjkl
@@ -347,7 +345,6 @@ nnoremap <Leader>f :LustyFilesystemExplorerFromHere <CR>
 nnoremap <Leader>g :LustyBufferGrep <CR>
 
 
-
 map <Leader>p :echo expand('%:p') <CR>
 
 " Move by screen lines instead of file line. Nice with long lines.
@@ -365,13 +362,8 @@ nnoremap <Leader>u I" <C-c>hvk$xh " up
 nnoremap <Leader>d jI" <C-c>hvk$xh " Down
 
 
-
-
 " diff will be opened automatically after the git commit.
 autocmd FileType gitcommit DiffGitCached | wincmd p
-
-
-
 
 
 " Command for reloading snipMate snippets
@@ -381,7 +373,6 @@ command SnippetsEditSelect e ~/.vim/bundle/snipmate/snippets/
 command SnippetsEdit execute "edit ~/.vim/bundle/snipmate/snippets/" . &ft . ".snippets"
 " Reload snippets after saving
 au BufWritePost *.snippets call ReloadAllSnippets()
-
 
 
 " for pyref
@@ -395,7 +386,6 @@ set spelllang=en_us
 nmap <silent> <leader>s :set spell!<CR>
 
 
-
 "" Use ,c to compile selected text to corresponding output and print it to stdout
 " CoffeeScript to Javascript
 au FileType coffee vmap <leader>c <esc>:'<,'>:w !coffee -scb \| pygmentize -l javascript<CR>
@@ -406,7 +396,6 @@ au BufEnter *.haml vmap <leader>c <esc>:'<,'>:w !~/.vim/bin/deindent \| haml<CR>
 " Markdown to HTML
 au BufEnter *.md,*.markdown vmap <leader>c <esc>:'<,'>:w !markdown<CR>
 " au FileType scss vmap <leader>c <esc>:'<,'>:w !sass --stdin --scss<CR>
-
 
 
 " h, for line start
@@ -445,3 +434,13 @@ let g:EasyGrepCommand=1
 
 
 let coffee_pygmentize="/home/epeli/.virtualenvs/pygments/bin/pygmentize"
+
+" Disable arrow keys for learning hjkl-navigation
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
