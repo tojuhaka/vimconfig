@@ -255,7 +255,11 @@ parts = os.getcwd().split("/")
 for i in range(len(parts)):
     omelette = "%s/parts/omelette" % "/".join(parts[0:i + 1])
     if os.path.isdir(omelette):
-        os.environ["PYTHONPATH"] = omelette
+        if os.environ.get("PYTHONPATH"):
+            os.environ["PYTHONPATH"] += ":" + omelette
+        else:
+            os.environ["PYTHONPATH"] = omelette
+        sys.path.append(omelette)
         vim.command(r"set path+=%s" % omelette)
     tags = "%s/tags" % "/".join(parts[0:i + 1])
     if os.path.isfile(tags):
@@ -439,14 +443,14 @@ let g:EasyGrepCommand=1
 let coffee_pygmentize="/home/epeli/.virtualenvs/pygments/bin/pygmentize"
 
 " Disable arrow keys for learning hjkl-navigation
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+" noremap  <Up> ""
+" noremap! <Up> <Esc>
+" noremap  <Down> ""
+" noremap! <Down> <Esc>
+" noremap  <Left> ""
+" noremap! <Left> <Esc>
+" noremap  <Right> ""
+" noremap! <Right> <Esc>
 
 " Highlight long lines
 set colorcolumn=80
