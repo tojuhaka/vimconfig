@@ -439,18 +439,7 @@ let g:EasyGrepRecursive=1
 let g:EasyGrepIgnoreCase=1
 let g:EasyGrepCommand=1
 
-
 let coffee_pygmentize="/home/epeli/.virtualenvs/pygments/bin/pygmentize"
 
-" Disable arrow keys for learning hjkl-navigation
-" noremap  <Up> ""
-" noremap! <Up> <Esc>
-" noremap  <Down> ""
-" noremap! <Down> <Esc>
-" noremap  <Left> ""
-" noremap! <Left> <Esc>
-" noremap  <Right> ""
-" noremap! <Right> <Esc>
-
-" Highlight long lines
+" Show margin column
 set colorcolumn=80
