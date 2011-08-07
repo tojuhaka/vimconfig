@@ -16,3 +16,9 @@
 [submodule "bundle/python_open_module"]
 	path = bundle/python_open_module
 	url = https://github.com/vim-scripts/python_open_module.git
+[submodule "bundle/lustyexplorer"]
+	path = bundle/lustyexplorer
+	url = https://github.com/vim-scripts/LustyExplorer.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = https://github.com/vim-scripts/Command-T.git
