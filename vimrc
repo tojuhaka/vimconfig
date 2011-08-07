@@ -427,7 +427,7 @@ au VimEnter * unmap <Leader>bd
 " LustyExplorer
 au VimEnter * unmap <Leader>lf
 au VimEnter * unmap <Leader>lb
-au VimEnter * unmap <Leader>lj
+" au VimEnter * unmap <Leader>lj
 au VimEnter * unmap <Leader>lg
 au VimEnter * unmap <Leader>lr
 
