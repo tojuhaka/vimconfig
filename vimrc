@@ -31,7 +31,7 @@ else
     CommandTSetWorkingDirectory " Set up initially
 
     " remove easy :call EasyMotionT(0, 0)<CR>
-    au VimEnter *  unmap <Leader>t
+    au VimEnter * unmap <Leader>t
     au VimEnter * map <Leader>t :exec  "CommandT" . g:CommandTWorkingDirectory  <CR>
 endif
 
