@@ -12,9 +12,9 @@ backup ~/.vim
 backup ~/.vimrc
 backup ~/.gvimrc
 
-git clone http://github.com/epeli/vimconfig.git ~/.vim
+git clone http://github.com/datakurre/vimconfig.git ~/.vim
 cd ~/.vim
-git remote add sshorigin git@github.com:epeli/vimconfig.git
+git remote add sshorigin git@github.com:datakurre/vimconfig.git
 make install
 
 
