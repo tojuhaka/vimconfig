@@ -15,6 +15,10 @@ Caps Lock to Esc
 
 Can't live without it.
 
+Get solarized theme for Terminal.app
+
+    https://github.com/tomislav/osx-lion-terminal.app-colors-solarized
+
 ## Installing the config
 
     wget -q --no-check-certificate -O - https://github.com/datakurre/vimconfig/raw/master/setupvim.sh  | bash -eu
