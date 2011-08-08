@@ -246,25 +246,6 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
-" Add omelette path for python completion and pydoc
-py << EOF
-import os
-import sys
-import vim
-parts = os.getcwd().split("/")
-for i in range(len(parts)):
-    omelette = "%s/parts/omelette" % "/".join(parts[0:i + 1])
-    if os.path.isdir(omelette):
-        if os.environ.get("PYTHONPATH"):
-            os.environ["PYTHONPATH"] += ":" + omelette
-        else:
-            os.environ["PYTHONPATH"] = omelette
-        sys.path.append(omelette)
-        vim.command(r"set path+=%s" % omelette)
-    tags = "%s/tags" % "/".join(parts[0:i + 1])
-    if os.path.isfile(tags):
-        vim.command(r"set tags=%s" % tags)
-EOF
 let g:pom_key_open='<leader>M'
 
 " TaskList
@@ -445,7 +426,7 @@ let coffee_pygmentize="/home/epeli/.virtualenvs/pygments/bin/pygmentize"
 set colorcolumn=80
 
 
-" Find tags directory by going up from cwd
+" Find tags|omelette directory by going up from cwd
 py << EOF
 import os
 import sys
@@ -459,6 +440,13 @@ for i in range(max):
         print "Found tags from", tags
         vim.command(r"set tags=%s" % tags)
         break
+    omelette = "%s/parts/omelette" % "/".join(parts[:-1])
+    if os.path.isdir(omelette):
+        if os.environ.get("PYTHONPATH"):
+            os.environ["PYTHONPATH"] += ":" + omelette
+        else:
+            os.environ["PYTHONPATH"] = omelette
+        sys.path.append(omelette)
+        vim.command(r"set path+=%s" % omelette)
 EOF
-
 
