@@ -14,6 +14,12 @@ backup ~/.gvimrc
 
 git clone http://github.com/datakurre/vimconfig.git ~/.vim
 cd ~/.vim
+
+git submodule init
+git submodule update
+git submodule foreach git submodule init
+git submodule foreach git submodule update
+
 git remote add sshorigin git@github.com:datakurre/vimconfig.git
 make install
 
