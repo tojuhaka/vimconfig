@@ -32,3 +32,5 @@ http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks
 http://superuser.com/questions/111016/vim-open-file-at-location-that-was-last-viewed
 
 http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim
+
+http://sontek.net/turning-vim-into-a-modern-python-ide
