@@ -437,7 +437,6 @@ for i in range(max):
     i += 1
     tags = "%s/tags" % "/".join(parts[:-i])
     if os.path.isfile(tags):
-        print "Found tags from", tags
         vim.command(r"set tags=%s" % tags)
         break
     omelette = "%s/parts/omelette" % "/".join(parts[:-1])

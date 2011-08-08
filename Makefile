@@ -13,7 +13,6 @@ all: update install
 	xrdb -merge ~/.Xresources
 	~/.vim/bin/set_light.sh
 
-
 .PHONY update:
 	git pull
 
