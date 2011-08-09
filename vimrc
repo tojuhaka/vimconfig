@@ -243,7 +243,8 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 let python_highlight_all = 1
 let g:pep8_map='<leader>8'
 au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 set completeopt=menuone,longest,preview
 
 let g:pom_key_open='<leader>M'
@@ -439,7 +440,9 @@ for i in range(max):
     if os.path.isfile(tags):
         vim.command(r"set tags=%s" % tags)
         break
-    omelette = "%s/parts/omelette" % "/".join(parts[:-1])
+for i in range(max):
+    i += 1
+    omelette = "%s/parts/omelette" % "/".join(parts[:-i])
     if os.path.isdir(omelette):
         if os.environ.get("PYTHONPATH"):
             os.environ["PYTHONPATH"] += ":" + omelette
@@ -447,5 +450,6 @@ for i in range(max):
             os.environ["PYTHONPATH"] = omelette
         sys.path.append(omelette)
         vim.command(r"set path+=%s" % omelette)
+        break
 EOF
 
