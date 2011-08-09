@@ -448,4 +448,3 @@ for i in range(max):
         sys.path.append(omelette)
         vim.command(r"set path+=%s" % omelette)
 EOF
-
