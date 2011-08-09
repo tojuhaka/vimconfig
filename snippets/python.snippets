@@ -1,6 +1,8 @@
-snippet pdb
+snippet bp
 	import pdb; pdb.set_trace()
-snippet gaepdb
+snippet vbp
+	import vimpdb; vimpdb.set_trace()
+snippet gbp
 	import sys
 	for attr in ('stdin', 'stdout', 'stderr'):
 		setattr(sys, attr, getattr(sys, '__%s__' % attr))
