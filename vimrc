@@ -243,7 +243,8 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 let python_highlight_all = 1
 let g:pep8_map='<leader>8'
 au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+" let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 set completeopt=menuone,longest,preview
 
