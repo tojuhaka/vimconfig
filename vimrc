@@ -242,9 +242,8 @@ autocmd BufRead,BufNewFile *.py set smartindent cinwords=if,elif,else,for,while,
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 let python_highlight_all = 1
 let g:pep8_map='<leader>8'
-au FileType python set omnifunc=pythoncomplete#Complete
-" let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
-let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 set completeopt=menuone,longest,preview
 
