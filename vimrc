@@ -105,7 +105,6 @@ nnoremap <leader>e :Errors<CR>
 " Show statusline always
 set laststatus=2
 
-
 " change the terminal's title
 set title
 
@@ -117,12 +116,6 @@ set hidden
 
 " make backspace work like most other apps
 set backspace=2
-
-
-" Vim’s defaults are awful messy, leaving .swp files everywhere if the editor
-" isn’t closed properly. This can save you a lot of time.
-set nobackup
-set noswapfile
 
 " No Vi stuff anymore
 set nocompatible
@@ -152,16 +145,16 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " Backups
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap// " swap files
-set backup " enable backup
-
+set backupdir=~/.vim/tmp/backup//  " backups
+set directory=~/.vim/tmp/swap//    " swap files
+set noswapfile
+set nobackup       " disabled to keep inode numbers unchanged on OSX
+set nowritebackup  " disabled to keep inode numbers unchanged on OSX
 
 " * Search & Replace
 " make searches case-insensitive, unless they contain upper-case letters:
 set ignorecase
 set smartcase
-
 
 " do not store global and local values in a session
 set ssop-=options
