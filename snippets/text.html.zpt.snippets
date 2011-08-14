@@ -1,0 +1,73 @@
+# ZPT: i18n
+snippet i18n
+	i18n:${1:translate}="${2}"${3}
+# metal:define-macro
+snippet taldm
+	<metal:block define-macro="${1:name}">
+		${0:$TM_SELECTED_TEXT}
+	</metal:block>
+	
+# metal:define-slot
+snippet taldslot
+	<metal:${1:tag} define-slot="${2:name}">
+		${0:$TM_SELECTED_TEXT}
+	</metal:${1}>
+	
+# tal:comment
+snippet talcom
+	<tal:${1:comment} tal:condition="nothing">
+		${0}
+	</tal:${1}>
+	
+# tal:content
+snippet talc
+	tal:content="${1:python:}${0}"
+# tal:omit-tag
+snippet talo
+	tal:omit-tag="${1:}${0}"
+# tal:repeat
+snippet talre
+	tal:repeat="${1:item} ${2:view/attribute}"${0}
+# tal:replace
+snippet talr
+	tal:replace="${1:python:}${0}"
+# talb
+snippet talb
+	<tal:${1:block} ${0}>
+		${0}
+	</tal:${1}>
+# ZPT: New Page
+snippet page
+	<html xmlns="http://www.w3.org/1999/xhtml"
+	      xml:lang="en-US" lang="en-US"
+	      xmlns:tal="http://xml.zope.org/namespaces/tal"
+	      xmlns:metal="http://xml.zope.org/namespaces/metal"
+	      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+	      i18n:domain="${1:plone}">
+	
+	    <body>
+	        ${0}
+	    </body>
+	</html>
+	
+# metal:use-macro
+snippet talum
+	<metal:${1:block} metal:use-macro="context/@@${2:macrotemplate}/${3:macroname}">
+	    ${0:$TM_SELECTED_TEXT}
+	</metal:${1}>
+# tal
+snippet tal
+	<tal:${1:block}>
+		${0}
+	</tal:${1}>
+	
+	
+# tal:attributes
+snippet tala
+	tal:attributes="${1} ${2:python:}${0}"
+# tal:condition
+snippet talco
+	tal:condition="${1:python:}${0}"
+# tal:define
+snippet tald
+	tal:define="${1} ${2:python:}${0}"

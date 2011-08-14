@@ -1,0 +1,13 @@
+# DocTest: indented code
+snippet >
+	
+	  >>> 
+# DocTest: try block
+snippet try
+	try:
+	...     ${0}${TM_CURRENT_LINE/^[>\s]*//}
+	... except:
+	...     traceback = self.portal.error_log.getLogEntries()[0]['tb_text']
+	...     print traceback
+	...     import pdb; pdb.set_trace( )
+	>>> # original line: 

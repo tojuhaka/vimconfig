@@ -1,29 +1,20 @@
-# xml-genericsetup-zope snippets for snipMate.
-# Created by ./tm2snip.py @ 2011-03-11 10:15:40.980041
-
-# Setup:skinlayer
-snippet <layer Setup:skinlayer
-	<${1}layer name="${2}" ${3:insert-after="${4:custom}"}/>
-	
-
-# Setup:catalogcolumn
-snippet <col Setup:catalogcolumn
-	<${1}column ${2:value="${3}"}/>
-
-# Setup:catalogindex
-snippet <index Setup:catalogindex
-	<${1}index ${2:name="${3}"} ${4:meta_type="${5}"}>
-	  <indexed_attr ${6:value="${7}"}/>
+# Generic Setup: catalog column
+snippet <col
+	<${1}column value="${3}"/>
+# Generic Setup: catalog index
+snippet <index
+	<${1}index name="${3}" meta_type="${5}">
+	  <indexed_attr value="${7}"/>
 	</index>
-
-# Setup:skinpath
-snippet <skin-path Setup:skinpath
-	<${1}skin-path name="${2:Plone Default}">
-	  ${3}
-	</skin-path>
-
-# Setup:folderishtype
-snippet <ftype Setup:folderishtype
+# Generic Setup: directory view
+snippet <object
+	<${1}object
+	  name="${2}"
+	  meta_type="Filesystem Directory View"
+	  directory="${3}"/>
+	
+# Generic Setup: folderish type
+snippet <ftype
 	<?xml version="1.0"?>
 	<object name="${1}"
 	  meta_type="Factory-based Type Information with dynamic views"
@@ -39,12 +30,12 @@ snippet <ftype Setup:folderishtype
 	  <property name="global_allow">True</property>
 	  <property name="filter_content_types">${4}</property>
 	  <property name="allowed_content_types">
-	   ${5:<element value="${6}"/>}
+	   <element value="${6}"/>
 	  </property>
 	  <property name="allow_discussion">False</property>
 	  <property name="default_view">${7:folder_listing}</property>
 	  <property name="view_methods">
-	   ${8:<element value="${9}folder_listing"/>}
+	   <element value="${9}folder_listing"/>
 	  </property>
 	  
 	  <alias from="(Default)" to="(dynamic view)"/>
@@ -103,22 +94,20 @@ snippet <ftype Setup:folderishtype
 	
 	</object>
 	
-
-# Setup:permission
-snippet <permission Setup:permission
-	<${1}permission ${2:name="${3}"} ${4:acquire="${5}"}>
-	  <role ${6:name="${7}"}/>
-	</permission>
-
-# Setup:role
-snippet <role Setup:role
-	<${1}role ${2:name="${3}"}/>
-
-# Setup:directoryview
-snippet <object Setup:directoryview
-	<${1}object
-	  name="${2}"
-	  meta_type="Filesystem Directory View"
-	  directory="${3}"/>
+# Generic Setup: skin layer
+snippet <layer
+	<${1}layer name="${2}" ${3:insert-after="${4:custom}"}/>
 	
-
+# Generic Setup: skin path
+snippet <skin-path
+	<${1}skin-path name="${2:Plone Default}">
+	  ${3}
+	</skin-path>
+# Generic Setup: permission
+snippet <permission
+	<${1}permission name="${3}" acquire="${5}">
+	  <role name="${7}"/>
+	</permission>
+# Generic Setup: role
+snippet <role
+	<${1}role name="${3}"/>
