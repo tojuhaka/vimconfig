@@ -21,7 +21,7 @@
 	url = https://github.com/sjbach/lusty.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
-	url = http://git.wincent.com/command-t.git
+	url = git://git.wincent.com/command-t.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
