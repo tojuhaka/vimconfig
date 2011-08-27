@@ -310,8 +310,11 @@ au FileType scss vmap <leader>c <esc>:'<,'>:w !sass --stdin --scss<CR>
 " Cooler tab completion for vim commands
 " http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
 set wildmode=longest,list
+
 set completeopt=menuone,longest,preview
-let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+
+" let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 
@@ -363,8 +366,9 @@ map <C-h> :py EvaluateCurrentRange()<CR>
 " File management
 
 " Open file tree
-nnoremap <Leader>n :LustyFilesystemExplorer<CR>
-
+" nnoremap <Leader>n :LustyFilesystemExplorer<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
+"
 " Open bufexplorer
 nnoremap <Leader>m :LustyBufferExplorer <CR>
 
@@ -431,14 +435,13 @@ import vim
 parts = os.getcwd().split("/")
 max = len(parts)
 for i in range(max):
-    i += 1
-    tags = "%s/tags" % "/".join(parts[:-i])
+    tags = "%s/tags" % "/".join(i and parts[:-i] or parts)
     if os.path.isfile(tags):
         vim.command(r"set tags=%s" % tags)
         break
-for i in range(max):
     i += 1
-    omelette = "%s/parts/omelette" % "/".join(parts[:-i])
+for i in range(max):
+    omelette = "%s/parts/omelette" % "/".join(i and parts[:-i] or parts)
     if os.path.isdir(omelette):
         if os.environ.get("PYTHONPATH"):
             os.environ["PYTHONPATH"] += ":" + omelette
@@ -447,6 +450,7 @@ for i in range(max):
         sys.path.append(omelette)
         vim.command(r"set path+=%s" % omelette)
         break
+    i += 1
 EOF
 
 
