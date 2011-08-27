@@ -313,9 +313,9 @@ set wildmode=longest,list
 
 set completeopt=menuone,longest,preview
 
-" let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+" let g:SuperTabDefaultCompletionType = "<C-x><C-]>"
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<C-n>"
 
 
 """
@@ -426,6 +426,9 @@ let g:pyref_mapping = 'K'
 
 """
 " Exuberant Ctags and Omelette
+
+nnoremap <leader>T g]
+
 
 " Find tags|omelette directory by going up from cwd
 py << EOF
