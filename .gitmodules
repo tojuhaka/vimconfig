@@ -37,3 +37,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim
+[submodule "bundle/po.vim"]
+	path = bundle/po.vim
+	url = https://github.com/vim-scripts/po.vim--Jelenak.git
