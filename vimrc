@@ -146,28 +146,6 @@ au BufNewFile,BufRead *.markdown setfiletype markdown
 
 
 """
-" Indenting stuff
-
-" Use smart indenting
-set smarttab expandtab autoindent
-
-" By default use 4 spaces as indentation
-set tabstop=4 shiftwidth=4 softtabstop=4
-
-" Command for resetting tab width
-command -nargs=1 TabWidth setlocal shiftwidth=<args> tabstop=<args> softtabstop=<args>
-
-" Ruby uses 2 spaces as indentation
-au FileType ruby,haml,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" Also for xmly stuff
-au FileType html,xml,xhtml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" Makefiles and gitconfig require tab
-au FileType make,gitconfig setlocal noexpandtab
-
-
-"""
 " Remove crappy keymappings set by plugings
 " search bad plugings with :verbose imap <c-n>
 
@@ -455,6 +433,31 @@ for i in range(max):
         break
     i += 1
 EOF
+
+
+"""
+" Indenting stuff
+
+" Use smart indenting
+set smarttab expandtab autoindent
+
+" By default use 4 spaces as indentation
+set tabstop=4 shiftwidth=4 softtabstop=4
+
+" Command for resetting tab width
+command -nargs=1 TabWidth setlocal shiftwidth=<args> tabstop=<args> softtabstop=<args>
+
+" Ruby uses 2 spaces as indentation
+au FileType ruby,haml,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Also for xmly stuff
+au FileType html,xml,xhtml,xsl setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Also for javascript
+au FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Makefiles and gitconfig require tab
+au FileType make,gitconfig setlocal noexpandtab
 
 
 ""
