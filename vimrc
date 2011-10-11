@@ -453,8 +453,8 @@ au FileType ruby,haml,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " Also for xmly stuff
 au FileType html,xml,xhtml,xsl setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" Also for javascript
-au FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" Also for javascript and scss
+au FileType coffee,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Makefiles and gitconfig require tab
 au FileType make,gitconfig setlocal noexpandtab
