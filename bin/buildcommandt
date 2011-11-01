@@ -5,7 +5,7 @@ DISABLE_FLAG=~/.vim/bundle/command-t/disable
 [ -f $DISABLE_FLAG ] && rm $DISABLE_FLAG
 
 cd ~/.vim/bundle/command-t/ruby/command-t
-/usr/bin/ruby 'extconf.rb'
+ruby 'extconf.rb'
 # ruby 'extconf.rb'
 make clean
 make 
