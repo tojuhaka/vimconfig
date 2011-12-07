@@ -17,14 +17,14 @@ snippet setup.py
 	setup(name="${1}",
 		  version=version,
 		  description="${2}",
-		  long_description=open("README.rst").read() + "\n" +
+		  long_description=open("README.txt").read() + "\n" +
 						   open("HISTORY.txt").read(),
 		  # Get more strings from
 		  # http://pypi.python.org/pypi?%3Aaction=list_classifiers
 		  classifiers=[
 			  "Programming Language :: Python",
 		  ],
-		  keywords="corejet pivotal",
+		  keywords="",
 		  author="Asko Soukka",
 		  author_email="asko.soukka@iki.fi",
 		  url="https://github.com/datakurre/${3}/",
@@ -45,7 +45,7 @@ snippet setup.py
 snippet namespace
 	# See http://peak.telecommunity.com/DevCenter/setuptools#namespace-packages
 	try:
-		__import__('pkg_resources').declare_namespace(__name__)
+		__import__("pkg_resources").declare_namespace(__name__)
 	except ImportError:
 		from pkgutil import extend_path
 		__path__ = extend_path(__path__, __name__)
