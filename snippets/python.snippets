@@ -36,6 +36,9 @@ snippet setup.py
 		  install_requires=[
 			  "setuptools",
 		  ],
+		  extras_require={
+			  "test": ["plone.app.testing", "corejet.core"],
+		  },
 		  entry_points="""
 		  # -*- Entry points: -*-
 		  [z3c.autoinclude.plugin]
