@@ -1,0 +1,12 @@
+atapi.DateTimeField(
+	'${1}',
+	required=${2:False},
+	searchable=${3:False},
+	default_method=DateTime,
+	languageIndependent=True,
+	storage=atapi.AnnotationStorage(),
+	widget=atapi.CalendarWidget(
+		label=_(u"${4}"),
+		description=_(u"${5}")
+	),
+),
