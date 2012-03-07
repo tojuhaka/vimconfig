@@ -1,17 +1,18 @@
 schema.Id(
-	__name__ = '${1}',
-	title = ${3:u'${4}',}
-	description = ${6:u'${7}',}
-	${8:required = ${9:True},}
-	${10:readonly = ${11:False},}
-	${12:default = ${13:None},}
-	${14:missing_value = ${15:None},}
-	${16:order = ${17:0},}
-	${18:constraint = ${19:my_constraint_callable},}
-	${20:min = ${21:0},}
-	${22:max = ${23:1},}
-	${24:min_length = ${25:0},}
-	${26:max_length = ${27:0},}
-	${28:value_type = ${29:None},}
-	${30:unique = ${31:False}}
-)
+	title=_("${1:}_label",
+	default=u"${2}"),
+	description=_("${3:$1}_help",
+	default=u"${4}")${5:,}
+	${7:required=}${8:True,}
+	${9:readonly=}${10:False,}
+	${11:default=}${12:None,}
+	${13:missing_value=}${14:None,}
+	${15:order=}${16:0,}
+	${17:constraint=}${18:my_constraint_callable,}
+	${19:min=}${20:0,}
+	${21:max=}${22:1,}
+	${23:min_length=}${24:0,}
+	${25:max_length=}${26:0,}
+	${27:value_type=}${28:None,}
+	${29:unique=}${30:False}
+	)
