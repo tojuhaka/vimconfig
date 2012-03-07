@@ -1,5 +1,3 @@
-snippet utf8
-	# -*- coding: utf-8 -*-
 snippet bp
 	import pdb; pdb.set_trace()
 snippet vbp
@@ -9,6 +7,10 @@ snippet gbp
 	for attr in ('stdin', 'stdout', 'stderr'):
 		setattr(sys, attr, getattr(sys, '__%s__' % attr))
 	import pdb; pdb.set_trace()
+snippet he
+	browser.handleErrors = False
+snippet utf8
+	# -*- coding: utf-8 -*-
 snippet setup.py
 	from setuptools import setup, find_packages
 
@@ -52,3 +54,5 @@ snippet namespace
 	except ImportError:
 		from pkgutil import extend_path
 		__path__ = extend_path(__path__, __name__)
+snippet impl
+	implements(${1:Interface})
