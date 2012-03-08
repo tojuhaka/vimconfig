@@ -2,28 +2,28 @@
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
     <genericsetup:upgradeStep
-        title="Upgrade ${1} (1 to 2)"
-        description="Upgrades ${2} from profile 1 to 2."
-        profile="${3}:default"
+        title="Upgrade ${1:} (1 to 2)"
+        description="Upgrades ${2:$1} from profile 1 to 2."
+        profile="${3:$1}:default"
         source="1" destination="2" sortkey="1"
-        handler="${4}.upgrades.upgrade1to2"
+        handler="${4:$1}.upgrades.upgrade1to2"
         />
 
     <genericsetup:registerProfile
         name="upgrade1to2"
-        title="Upgrade ${5} (1 to 2)"
+        title="Upgrade ${5:$1} (1 to 2)"
         directory="profiles/upgrade1to2"
-        description="Upgrades ${6} from profile 1 to 2."
+        description="Upgrades ${6:$1} from profile 1 to 2."
         provides="Products.GenericSetup.interfaces.EXTENSION"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         />
 
     <genericsetup:upgradeDepends
         source="1" destination="2" sortkey="1"
-        title="Upgrade ${7} 1 to 2"
-        description="Upgrades ${8} from profile 1 to 2."
-        profile="${9}:default"
-        import_profile="${10}:upgrade1to2"
+        title="Upgrade ${7:$1} 1 to 2"
+        description="Upgrades ${8:$1} from profile 1 to 2."
+        profile="${9:$1}:default"
+        import_profile="${10:$1}:upgrade1to2"
         import_steps=""
         run_deps="false"
         />

@@ -1,17 +1,12 @@
-schema.Bool(
-    __name__ = '${1}',
-    title = ${3:u'${4}',}
-    description = ${6:u'${7}',}
-    ${8:required = ${9:True},}
-    ${10:readonly = ${11:False},}
-    ${12:default = ${13:None},}
-    ${14:missing_value = ${15:None},}
-    ${16:order = ${17:0},}
-    ${18:constraint = ${19:my_constraint_callable},}
-    ${20:min = ${21:0},}
-    ${22:max = ${23:1},}
-    ${24:min_length = ${25:0},}
-    ${26:max_length = ${27:0},}
-    ${28:value_type = ${29:None},}
-    ${30:unique = ${31:False}}
-)
+schema.Id(
+	title=_("${1:}_label",
+	        default=u"${2}"),
+	description=_("${3:$1}_help",
+	              default=u"${4}")${5:,}
+	${6:constraint=}${7:my_constraint_callable,}
+	${8:default=}${9:None,}
+	${10:missing_value=}${11:None,}
+	${12:readonly=}${13:False,}
+	${14:order=}${15:0,}
+	${16:required=}${17:True,}
+	)
