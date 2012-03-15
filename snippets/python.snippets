@@ -11,6 +11,9 @@ snippet he
 	browser.handleErrors = False
 snippet utf8
 	# -*- coding: utf-8 -*-
+snippet ZopeMessageFactory
+	from zope.i18nmessageid import MessageFactory as ZopeMessageFactory
+	_ = ZopeMessageFactory("${1}")
 snippet setup.py
 	from setuptools import setup, find_packages
 
