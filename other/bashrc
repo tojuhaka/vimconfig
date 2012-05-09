@@ -1,0 +1,106 @@
+
+export TERM=screen-256color
+export EDITOR=vim
+
+# Disable terminal flow control
+stty -ixon
+
+# tmux
+source $HOME/.vim/others/bash_completion_tmux.sh
+
+# if [ -x $(which keychain) ] ; then
+#     keychain --nogui -q -Q id_rsa
+#         . ~/.keychain/`uname -n`-sh
+# fi
+
+
+alias ircproxy='ssh -t jyulakka ssh -t melmacian.net "tmux att -d -t irc"'
+
+if [ -d ~/.vim/bin ] ; then
+    PATH=~/.vim/bin:"${PATH}"
+fi
+
+if [ -d ~/bin ] ; then
+    PATH=~/bin:"${PATH}"
+fi
+
+# Thanks to https://gist.github.com/634750
+
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+BLUE="\[\033[0;34m\]"
+LIGHT_RED="\[\033[1;31m\]"
+LIGHT_GREEN="\[\033[1;32m\]"
+WHITE="\[\033[1;37m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+COLOR_NONE="\[\e[0m\]"
+
+function generate_git_bar {
+  git_status="$(git status 2> /dev/null)"
+  branch_pattern="^# On branch ([^${IFS}]*)"
+  detached_branch_pattern="# Not currently on any branch"
+  remote_pattern="# Your branch is (.*) of"
+  diverge_pattern="# Your branch and (.*) have diverged"
+
+  if [[
+    ${git_status}} =~ "Changed but not updated" || \
+    ${git_status}} =~ "Changes not staged for commit" || \
+    ${git_status}} =~ "Changes to be committed" # Old git?
+  ]]; then
+    state="${RED}⚡"
+  fi
+
+  if [[ ${git_status}} =~ "Untracked files" ]]; then
+    state="${state}${RED}?"
+  fi
+
+
+  # add an else if or two here if you want to get more specific
+  if [[ ${git_status} =~ ${remote_pattern} ]]; then
+    if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
+      remote="${YELLOW}↑"
+    else
+      remote="${YELLOW}↓"
+    fi
+  fi
+  if [[ ${git_status} =~ ${diverge_pattern} ]]; then
+    remote="${YELLOW}↕"
+  fi
+  if [[ ${git_status} =~ ${branch_pattern} ]]; then
+    branch=${BASH_REMATCH[1]}
+  elif [[ ${git_status} =~ ${detached_branch_pattern} ]]; then
+    branch="${YELLOW}NO BRANCH"
+  fi
+
+  # if [[ ${#state} -gt "0" || ${#remote} -gt "0" ]]; then
+  #   s="${COLOR_NONE} "
+  # fi
+
+  echo "${BLUE}(${branch}${s}${remote}${state}${BLUE})"
+}
+
+function prompt_func() {
+
+  # <user>@<host> <current working directory>
+  TITLEBAR="\n${GREEN}\u@\h ${YELLOW}\w"
+
+  # Use red # as prompt char when root
+  if [ $(id -u) -eq 0 ]; then
+    PROMPT_CHAR="${RED}# ${COLOR_NONE}"
+  else
+    PROMPT_CHAR="${COLOR_NONE}$ "
+  fi
+
+  git rev-parse --git-dir > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    # In Git repo
+    PS1="${TITLEBAR}\n$(generate_git_bar)${PROMPT_CHAR}"
+  else
+    # Normal directory
+    PS1="${TITLEBAR}\n${PROMPT_CHAR}"
+  fi
+
+}
+
+PROMPT_COMMAND=prompt_func
