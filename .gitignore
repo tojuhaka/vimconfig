@@ -1,10 +1,10 @@
+*~
 *.swp
-.netrwhist
 .VimballRecord
-view/
+.git
+.netrwhist
 bundle/*/doc/tags
 bundle/*/doc/tags-ja
 spell/*.spl
-*~
-.git
 tmp/*
+view/
