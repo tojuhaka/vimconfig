@@ -1,15 +1,8 @@
-echo "export TERM=xterm-256-colors" >>~/.bashrc
-echo "PATH=$HOME/apps/bin:$PATH" >> ~/.bashrc
-
+# Ruby and compass
 bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 ~/.rvm/bin/rvm install 1.9.2
-echo 'rvm use 1.9.2' >>~/.bash_profile
-source ~/.bash_profile
-rvm use 1.9.2
 
 gem install compass compass-magick oily_png
-
-echo "alias vi=vim" >>~/.bashrc
 
 # vim configure:
 # ./configure --disable-gui --without-x --disable-gpm --disable-nls --with-tlib=ncurses --enable-multibyte --enable-pythoninterp --enable-rubyinterp --prefix=/home/datakurre/apps
