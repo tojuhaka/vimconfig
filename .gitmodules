@@ -40,3 +40,6 @@
 [submodule "bundle/po.vim"]
 	path = bundle/po.vim
 	url = http://github.com/vim-scripts/po.vim--Jelenak.git
+[submodule "bundle/slimux"]
+	path = bundle/slimux
+	url = http://github.com/epeli/slimux.git
