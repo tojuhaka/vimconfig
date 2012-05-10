@@ -5,6 +5,10 @@
 .netrwhist
 bundle/*/doc/tags
 bundle/*/doc/tags-ja
+bundle/snipmate
+bundle/syntastic
+bundle/taglist
+bundle/vcscommand
 spell/*.spl
 tmp/*
 view/

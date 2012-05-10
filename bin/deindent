@@ -15,4 +15,3 @@ for line in lines:
 
 for line in lines:
     sys.stdout.write(line[min:])
-

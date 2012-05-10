@@ -22,5 +22,3 @@ git submodule foreach git submodule update
 
 git remote add sshorigin git@github.com:datakurre/vimconfig.git
 make install
-
-

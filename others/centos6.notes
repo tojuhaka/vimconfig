@@ -1,0 +1,28 @@
+echo "export TERM=xterm-256-colors" >>~/.bashrc
+echo "PATH=$HOME/apps/bin:$PATH" >> ~/.bashrc
+
+bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+~/.rvm/bin/rvm install 1.9.2
+echo 'rvm use 1.9.2' >>~/.bash_profile
+source ~/.bash_profile
+rvm use 1.9.2
+
+gem install compass compass-magick oily_png
+
+echo "alias vi=vim" >>~/.bashrc
+
+# vim configure:
+# ./configure --disable-gui --without-x --disable-gpm --disable-nls --with-tlib=ncurses --enable-multibyte --enable-pythoninterp --enable-rubyinterp --prefix=/home/datakurre/apps
+
+# System python
+sudo python ez_setup.py
+sudo easy_install pip
+sudo pip install virtualenv
+sudo pip install keyring
+sudo pip install mercurial_keyring
+sudo pip install hg-git
+sudo pip install pep8
+sudo pip install pyflakes
+sudo pip install collective.checkdocs
+sudo pip install mr.igor
+sudo pip install watchdog

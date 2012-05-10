@@ -1,0 +1,11 @@
+[ui]
+username = Asko Soukka <asko.soukka@iki.fi>
+
+[extensions]
+mercurial_keyring =
+hggit =
+
+[auth]
+rhodecode.schemes = http
+rhodecode.prefix = jyuplone.cc.jyu.fi/code
+rhodecode.username = datakurre
