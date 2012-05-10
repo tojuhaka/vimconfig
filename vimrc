@@ -93,6 +93,7 @@ command SessionLoad source .session.vim
 " Colors
 set t_Co=256
 colorscheme solarized
+let g:solarized_termcolors=256
 set background=dark
 
 " Statusline with Syntastic
