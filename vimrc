@@ -260,8 +260,12 @@ command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 set spelllang=en_us
 
 " Toggle spelling
-nmap <silent> <leader>s :set spell!<CR>
+nmap <silent> <leader>S :set spell!<CR>
 
+" Slimux key map
+map <Leader>s :SlimuxREPLSendLine<CR>
+vmap <Leader>s :SlimuxREPLSendSelection<CR>
+map <Leader>a :SlimuxShellLast<CR>
 
 """
 " Use ,c to compile selected text to corresponding output and print it to
