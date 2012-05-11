@@ -1,0 +1,3 @@
+DEFAULT_CACHE_SIZE:0
+
+VIEWER:image/png:asciiview %s

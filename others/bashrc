@@ -106,6 +106,7 @@ PROMPT_COMMAND=prompt_func
 # Variables and aliases
 export TERM=screen-256color
 export EDITOR=vim
+export LYNX_CFG=$HOME/.lynxcfg
 alias vi=vim
 
 # Disable terminal flow control
