@@ -2,8 +2,12 @@
 username = Asko Soukka <asko.soukka@iki.fi>
 
 [extensions]
-mercurial_keyring =
+bookmarks =
 hggit =
+mercurial_keyring =
+
+[bookmarks]
+track.current = True
 
 [auth]
 rhodecode.schemes = http
