@@ -108,10 +108,12 @@ function prompt_func() {
 PROMPT_COMMAND=prompt_func
 
 # Variables and aliases
-export TERM=screen-256color
+export TERM=xterm-256color
 export EDITOR=vim
 export LYNX_CFG=$HOME/.lynxcfg
+export HG_SETUPTOOLS_FORCE_CMD=true
 alias vi=vim
+alias tags="bin/tags -v -l Python"
 
 # Disable terminal flow control
 if [ -t 0 ]; then  # only run if stdin is a terminal
@@ -125,6 +127,9 @@ source $HOME/.vim/others/bash_completion_tmux.sh
 if [ -d ~/.vim/bin ] ; then
     PATH=~/.vim/bin:"${PATH}"
 fi
+if [ -d ~/bin ] ; then
+    PATH=~/bin:"${PATH}"
+fi
 if [ -d ~/apps/bin ] ; then
     PATH=~/apps/bin:"${PATH}"
 fi
@@ -135,3 +140,12 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 if [ -t 0 ]; then  # only run if stdin is a terminal
   rvm use 1.9.2
 fi
+
+# Misc functions
+corejett(){
+xsltproc src/corejet.core/corejet/core/xslt/corejet-to-python.xsl parts/test/corejet/corejet.xml
+}
+
+dot2pdf(){
+dot -Tps $1|ps2pdf -
+}
