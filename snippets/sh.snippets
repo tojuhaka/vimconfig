@@ -1,0 +1,6 @@
+snippet i18n.sh
+	#!/bin/bash
+	
+	i18ndude rebuild-pot --pot src/${1:}/locales/${2:}.pot --create ${3:$2} src/${4:$1}
+	
+	i18ndude sync --pot src/${5:$1}/locales/${6:$2}.pot src/${6:$1}/locales/*/LC_MESSAGES/${6:$2}.po
