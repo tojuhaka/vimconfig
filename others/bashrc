@@ -80,17 +80,17 @@ function generate_hg_bar {
 
   if [[
     # if [ $? -eq 0 ]; then
-    ${hg_status}} =~ "M " || \
-    ${hg_status}} =~ "A " || \
-    ${hg_status}} =~ "R " || \
-    ${hg_status}} =~ "C " || \
-    ${hg_status}} =~ "! " || \
-    ${hg_status}} =~ "I "
+    ${hg_status} =~ "M " || \
+    ${hg_status} =~ "A " || \
+    ${hg_status} =~ "R " || \
+    ${hg_status} =~ "C " || \
+    ${hg_status} =~ "! " || \
+    ${hg_status} =~ "I "
   ]]; then
     state="${RED}⚡"
   fi
 
-  if [[ ${hg_status}} =~ "? " ]]; then
+  if [[ ${hg_status} =~ "\? " ]]; then
     state="${state}${RED}?"
   fi
 
