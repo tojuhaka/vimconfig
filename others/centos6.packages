@@ -1,24 +1,32 @@
 gcc
+gcc-c++
 make
+
 zlib-devel
+bzip2-devel
 python-devel
 ncurses-devel
 openssl-devel
 libevent-devel
 readline-devel
 
+man
 zip
 unzip
 ctags
 libxslt
 
-lynx
-
 git
+subversion
+gettext
 
 java-1.6.0
 dejavu-lgc
 ImageMagick
-man
-subversion
+
+ant
+ant-apache-regexp
+ant-apache-regexp exit
+
 ntp
+lynx
