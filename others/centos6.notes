@@ -20,7 +20,6 @@ sudo pip install pyflakes
 sudo pip install collective.checkdocs
 sudo pip install mr.igor
 sudo pip install watchdog
-openldap-devel
 
 # localtime
 sudo ln -s /usr/share/zoneinfo/Europe/Helsinki /etc/localtime

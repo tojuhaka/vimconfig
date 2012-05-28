@@ -9,6 +9,7 @@ ncurses-devel
 openssl-devel
 libevent-devel
 readline-devel
+openldap-devel
 
 man
 zip
