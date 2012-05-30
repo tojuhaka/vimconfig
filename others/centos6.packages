@@ -31,3 +31,10 @@ ant-apache-regexp exit
 
 ntp
 lynx
+
+xorg-x11-server-Xvfb
+firefox
+
+libxml2-devel
+libxslt-devel
+sqlite-devel
