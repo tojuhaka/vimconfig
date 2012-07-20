@@ -11,6 +11,7 @@ gem install compass compass-magick oily_png
 sudo python ez_setup.py
 sudo easy_install pip
 sudo pip install virtualenv
+sudo pip install virtualenvwrapper
 sudo pip install mercurial
 sudo pip install keyring
 sudo pip install mercurial_keyring

@@ -38,3 +38,4 @@ firefox
 libxml2-devel
 libxslt-devel
 sqlite-devel
+pcre-devel
