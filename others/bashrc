@@ -146,7 +146,12 @@ alias tags="bin/tags -v -l Python"
 alias startx="export DISPLAY=:99.0 && Xvfb :99 -screen 0 1024x768x16"
 export DISPLAY=:99.0
 
-# Disable terminal flow control
+# Virtualenvwrapper
+export WORKON_HOME=$HOME/env
+export PROJECT_HOME=$HOME/work
+source /usr/bin/virtualenvwrapper.sh
+
+#Disable terminal flow control
 if [ -t 0 ]; then  # only run if stdin is a terminal
   stty -ixon
 fi
