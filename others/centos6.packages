@@ -27,7 +27,6 @@ ImageMagick
 
 ant
 ant-apache-regexp
-ant-apache-regexp exit
 
 ntp
 lynx
