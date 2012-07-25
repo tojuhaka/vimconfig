@@ -1,0 +1,42 @@
+snippet buildout.cfg
+	[buildout]
+	extends = http://dist.plone.org/release/4.2-latest/versions.cfg
+	parts =
+		test
+		corejet-scripts
+	develop = .
+
+	[lxml]
+	recipe = z3c.recipe.staticlxml
+	egg = lxml
+
+	[test]
+	recipe = corejet.testrunner
+	eggs = ${1:}[test]
+	defaults = ['--auto-color', '--auto-progress']
+
+	[corejet-scripts]
+	recipe = zc.recipe.egg
+	eggs =
+		corejet.core
+		corejet.pivotal
+		corejet.robot
+	scripts =
+		corejet2py
+		corejet2robot
+		pivotal
+snippet lxml
+	[lxml]
+	recipe = z3c.recipe.staticlxml
+	egg = lxml
+snippet instance
+	[instance]
+	recipe = plone.recipe.zope2instance
+	eggs = ${buildout:eggs}
+	environment-vars =
+		PTS_LANGUAGES en fi
+		zope_i18n_allowed_languages en fi
+		zope_i18n_compile_mo_files true
+	http-address = 8080
+	user = admin:admin
+	# effective-user =
