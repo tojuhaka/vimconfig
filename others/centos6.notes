@@ -24,3 +24,7 @@ sudo pip install watchdog
 
 # localtime
 sudo ln -s /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
+
+# X Window System
+# yum groupinstall "X Windows System"
+# VBoxManage setextradata "VM Name" "CustomVideoMode1" "1680x1050x16"
