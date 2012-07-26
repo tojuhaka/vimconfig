@@ -1,0 +1,4 @@
+xterm*maximized: true
+xterm*scrollBar: off
+xterm*faceName: terminus:normal:size=14:minspace:rgba=rgb
+
