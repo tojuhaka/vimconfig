@@ -143,8 +143,8 @@ export LYNX_CFG=$HOME/.lynxcfg
 export HG_SETUPTOOLS_FORCE_CMD=true
 alias vi=vim
 alias tags="bin/tags -v -l Python"
-alias startx="export DISPLAY=:99.0 && Xvfb :99 -screen 0 1024x768x16"
-export DISPLAY=:99.0
+alias startXvfb="export DISPLAY=:99.0 && Xvfb :99 -screen 0 1024x768x16"
+# export DISPLAY=:99.0
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/env
