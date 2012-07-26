@@ -1,0 +1,3 @@
+# Dashes
+<Multi_key> <minus> <minus> <period> 	: "–"   U2013 # EN DASH
+<Multi_key> <minus> <minus> <minus> 	: "—"   U2014 # EM DASH
