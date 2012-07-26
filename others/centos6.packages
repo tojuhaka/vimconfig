@@ -17,6 +17,7 @@ zip
 unzip
 ctags
 libxslt
+libxslt-devel
 
 git
 subversion
