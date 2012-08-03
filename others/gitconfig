@@ -3,7 +3,7 @@ name = Asko Soukka
 email = asko.soukka@iki.fi
 
 [github]
-user = epeli
+user = datakurre
 
 [apply]
 whitespace = nowarn
