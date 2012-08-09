@@ -1,4 +1,4 @@
 xterm*maximized: true
 xterm*scrollBar: off
-xterm*faceName: dejavu:normal:size=10
+xterm*faceName: MesloLGS:Regular:size=10
 

@@ -5,6 +5,9 @@ email = asko.soukka@iki.fi
 [github]
 user = datakurre
 
+[push]
+default = current
+
 [apply]
 whitespace = nowarn
 
