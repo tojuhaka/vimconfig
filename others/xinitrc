@@ -1,5 +1,15 @@
-xrandr --newmode "1680x1050_60.00"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
-xrandr --addmode VBOX0 "1680x1050_60.00"
-xrandr --output VBOX0 --mode "1680x1050_60.00"
-VBoxClient --clipboard
+## VirtualBox
+# xrandr --newmode "1680x1050_60.00"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
+# xrandr --addmode VBOX0 "1680x1050_60.00"
+# xrandr --output VBOX0 --mode "1680x1050_60.00"
+# VBoxClient --clipboard
+
+xrandr --newmode "2880x1800"    0.00  2880 2960 3240 3600  1800 1803 1809 1812 -hsync +vsync
+xrandr --addmode default "2880x1800"
+
+## VMWare
+vmware-user
+xrandr --output default --mode "1440x900"
+setxkbmap -layout fi -variant mac -option lv3:lalt_switch -option compose:ralt
+
 exec xterm -bg "#1c1c1c" -fg lightgrey

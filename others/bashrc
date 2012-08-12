@@ -144,6 +144,8 @@ export HG_SETUPTOOLS_FORCE_CMD=true
 alias vi=vim
 alias tags="bin/tags -v -l Python"
 alias startXvfb="export DISPLAY=:99.0 && Xvfb :99 -screen 0 1024x768x16"
+function hglog() { hg log --template "- {desc}\n  [{author|person}]\n" -r tip:"`hg tags|head -n 2|tail -n 1|grep -o '^\S*'`";}
+function gitlog() { git log --pretty=format:"- %s%n  [%an]" "`git describe --tags|grep -o '^[^-]*'`"..HEAD; }
 # export DISPLAY=:99.0
 
 # Virtualenvwrapper

@@ -1,4 +1,4 @@
 xterm*maximized: true
 xterm*scrollBar: off
-xterm*faceName: terminus:normal:size=14:minspace:rgba=rgb
+xterm*faceName: MesloLGS:Regular:size=10
 
