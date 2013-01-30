@@ -40,3 +40,52 @@ snippet instance
 	http-address = 8080
 	user = admin:admin
 	# effective-user =
+snippet tags
+	[tags]
+	recipe = z3c.recipe.tag:tags
+	eggs = ${test:eggs}
+snippet omelette
+	[omelette]
+	recipe = collective.recipe.omelette
+	eggs = ${buildout:eggs}
+snippet corejet
+	[corejet-scripts]
+	recipe = zc.recipe.egg
+	eggs =
+		corejet.core
+		corejet.pivotal
+		corejet.robot
+	scripts =
+		corejet2py
+		corejet2robot
+		pivotal
+snippet test
+	[test]
+	recipe = corejet.testrunner
+	eggs = ${1:}[test]
+	defaults = ['--auto-color', '--auto-progress']
+snippet zopepy
+	[zopepy]
+	recipe = zc.recipe.egg
+	eggs = ${buildout:eggs}
+	interpreter = zopepy
+	scripts = zopepy
+snippet env
+	[env]
+	recipe = gocept.recipe.env
+snippet zamqp
+	zope-conf-additional =
+	   %import collective.zamqp
+	   <amqp-broker-connection>
+		   connection_id ${1:}
+		   # hostname localhost
+		   virtual_host /${2:}
+		   username ${3:}
+		   password ${4:}
+		   heartbeat 120
+		   keepalive 30
+	   </amqp-broker-connection>
+	   <amqp-consuming-server>
+		   connection_id ${1:}
+		   site_id ${5:}
+	   </amqp-consuming-server>
