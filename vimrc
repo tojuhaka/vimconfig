@@ -381,8 +381,8 @@ autocmd FileType python set omnifunc=RopeOmni
 " Auto jump on first error
 let g:pymode_lint_jump = 1
 
-" Lint with everything we have
-let g:pymode_lint_checker = "pylint,pyflakes,pep8"
+" Lint with pyflakes and pep8
+let g:pymode_lint_checker = "pyflakes,pep8"
 
 " Speed up rope
 let g:pymode_rope_guess_project = 0
