@@ -18,28 +18,7 @@
 
 
 """
-" Pathogen stuff
-
-let g:pathogen_disabled = []
-
-" Disable command-t if it is broken
-if filereadable($HOME . "/.vim/bundle/command-t/disable")
-   call add(g:pathogen_disabled, "command-t")
-else
-    " search buffers with Command-T
-    nnoremap <Leader>, :CommandTBuffer<CR>
-
-    " use separate working directory for Command-T instead of Vim's cwd.
-    " use CommandTSetWorkingDirectory to reset the dir to cwd of Vim.
-    command CommandTSetWorkingDirectory let g:CommandTWorkingDirectory = getcwd()
-    CommandTSetWorkingDirectory " Set up initially
-
-    " remove easy :call EasyMotionT(0, 0)<CR>
-    au VimEnter * unmap <Leader>t
-    au VimEnter * map <Leader>t :exec  "CommandT" . g:CommandTWorkingDirectory  <CR>
-endif
-
-" Activate all plugins from the bundle
+" Activate bundles (pathogen)
 call pathogen#runtime_append_all_bundles()
 
 
@@ -53,7 +32,7 @@ set ai
 set modeline
 
 " Ignore
-set wildignore=*.swp,*.bak,*.pyc,*.class,eggs,develop-eggs,*.egg-info,*~,node_modules
+set wildignore=*.swp,*.bak,*.pyc,*.class,develop-eggs,*.egg-info,*~,node_modules
 
 " Enable filetype detection
 filetype on
@@ -140,7 +119,6 @@ au BufNewFile,BufRead *.coffee  setfiletype coffee
 au BufNewFile,BufRead *.json setfiletype json
 au BufNewFile,BufRead *.ru setfiletype ruby
 au BufNewFile,BufRead *.conf setfiletype conf
-au BufNewFile,BufRead *.pde setfiletype arduino
 au BufNewFile,BufRead *.jade setfiletype jade
 au BufNewFile,BufRead *.md setfiletype markdown
 au BufNewFile,BufRead *.markdown setfiletype markdown
@@ -265,7 +243,7 @@ nmap <silent> <leader>S :set spell!<CR>
 " Slimux key map
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
-map <Leader>a :SlimuxShellLast<CR>
+map <Leader>A :SlimuxShellLast<CR>
 
 """
 " Use ,c to compile selected text to corresponding output and print it to
@@ -342,7 +320,7 @@ import vim
 def EvaluateCurrentRange():
     eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 EOL
-map <C-h> :py EvaluateCurrentRange()<CR>
+map <C-C> :py EvaluateCurrentRange()<CR>
 
 
 """
@@ -391,20 +369,23 @@ let g:clj_paren_rainbow=1  " Rainbow parentheses'!
 
 autocmd BufRead,BufNewFile *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+autocmd BufRead,BufNewFile *.py set nonumber!
 let python_highlight_all = 1
 
 " Autocomplete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=RopeOmni
 
-" Check against PEP8
-let g:pep8_map='<leader>8'
+"""
+" Python-mode
 
-" Open module
-let g:pom_key_open='<leader>M'
+" Auto jump on first error
+let g:pymode_lint_jump = 1
 
-" Pyref
-let g:pyref_index = '~/.vim/bundle/pyref/pyref/index'
-let g:pyref_mapping = 'K'
+" Lint with everything we have
+let g:pymode_lint_checker = "pylint,pyflakes,pep8"
+
+" Speed up rope
+let g:pymode_rope_guess_project = 0
 
 
 """
@@ -469,11 +450,8 @@ au FileType make,gitconfig setlocal noexpandtab
 " Other plugin stuff
 
 " Tasklist
-map <leader>td <Plug>TaskList
+map <leader>t <Plug>TaskList
 let g:tlTokenList = ["FIXME", "TODO", "XXX", "WONTFIX"]
-
-" Buffer revision history
-map <leader>G :GundoToggle<CR>
 
 " Command for reloading snipMate snippets
 command SnippetsReload call ReloadAllSnippets()
