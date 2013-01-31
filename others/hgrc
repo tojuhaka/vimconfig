@@ -1,13 +1,33 @@
 [ui]
 username = Asko Soukka <asko.soukka@iki.fi>
+merge = kaleidoscope
 
 [extensions]
 bookmarks =
-hggit =
+hgext.extdiff =
 mercurial_keyring =
+hggit =
 
 [bookmarks]
 track.current = True
+
+[hooks]
+# pretxncommit.pep8 = python:hghooks.code.pep8hook
+# pretxncommit.pyflakes = python:hghooks.code.pyflakeshook
+# pretxncommit.pdb = python:hghooks.code.pdbhook
+
+[extdiff]
+# cmd.ksdiff = /usr/local/bin/ksdiff-wrapper
+# opts.ksdiff = hg
+cmd.ksdiff = /usr/local/bin/ksdiff
+opts.ksdiff = --changeset --wait --filelist
+
+[merge-tools]
+kaleidoscope.executable = /usr/local/bin/ksdiff
+kaleidoscope.args = --merge --output $output --base $base -- $local $other
+
+filemerge.executable = /Users/atsoukka/.environ/apps/bin/opendiff
+filemerge.args = $local $other -ancestor $base -merge $output
 
 [auth]
 rhodecode.schemes = http
