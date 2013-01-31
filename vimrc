@@ -110,21 +110,6 @@ set colorcolumn=80
 
 
 """
-" File type association stuff
-
-" Define custom file types
-au BufNewFile,BufRead *.zcml  setfiletype xml
-au BufNewFile,BufRead *.pt  setfiletype xml
-au BufNewFile,BufRead *.coffee  setfiletype coffee
-au BufNewFile,BufRead *.json setfiletype json
-au BufNewFile,BufRead *.ru setfiletype ruby
-au BufNewFile,BufRead *.conf setfiletype conf
-au BufNewFile,BufRead *.jade setfiletype jade
-au BufNewFile,BufRead *.md setfiletype markdown
-au BufNewFile,BufRead *.markdown setfiletype markdown
-
-
-"""
 " Remove crappy keymappings set by plugings
 " search bad plugings with :verbose imap <c-n>
 
@@ -439,12 +424,6 @@ command -nargs=1 TabWidth setlocal shiftwidth=<args> tabstop=<args> softtabstop=
 " Ruby uses 2 spaces as indentation
 au FileType ruby,haml,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" Also for xmly stuff
-au FileType html,xml,xhtml,xsl setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" Also for javascript and scss
-au FileType coffee,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
 " Makefiles and gitconfig require tab
 au FileType make,gitconfig setlocal noexpandtab
 
@@ -474,3 +453,19 @@ let g:EasyGrepCommand=1
 
 " Mr. Igor
 nmap <C-i> :!igor %<CR> <bar> :e!<CR>
+
+
+"""
+" File type association stuff
+
+" Define custom file types
+au BufNewFile,BufRead *.zcml setfiletype xml
+au BufNewFile,BufRead *.coffee setfiletype coffee
+au BufNewFile,BufRead *.json setfiletype json
+au BufNewFile,BufRead *.ru setfiletype ruby
+au BufNewFile,BufRead *.conf setfiletype conf
+au BufNewFile,BufRead *.jade setfiletype jade
+au BufNewFile,BufRead *.md setfiletype markdown
+au BufNewFile,BufRead *.markdown setfiletype markdown
+au BufNewFile,BufRead *.pt set filetype=xml
+
