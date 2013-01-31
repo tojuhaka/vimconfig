@@ -320,7 +320,7 @@ import vim
 def EvaluateCurrentRange():
     eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 EOL
-map <C-C> :py EvaluateCurrentRange()<CR>
+map <C-e> :py EvaluateCurrentRange()<CR>
 
 
 """
@@ -386,6 +386,9 @@ let g:pymode_lint_checker = "pyflakes,pep8"
 
 " Speed up rope
 let g:pymode_rope_guess_project = 0
+
+" Organize imports
+map <C-c>o :call RopeOrganizeImports()
 
 
 """
