@@ -7,4 +7,4 @@ xterm*maximized: true
 xterm*background: #1c1c1c
 xterm*foreground: #95a5a6
 xterm*scrollBar: off
-xterm*faceName: MesloLGS:Bold:size=13
+xterm*faceName: MesloLGS:Regular:size=13
