@@ -34,6 +34,3 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = git://github.com/klen/python-mode.git
-[submodule "bundle/autoclose"]
-	path = bundle/autoclose
-	url = https://github.com/andrewle/vim-autoclose.git
