@@ -1,4 +1,4 @@
-My vim config (forked from @epeli)
+My vim config (forked from @datakurre who forked it from @epeli)
 ==================================
 
 
@@ -17,7 +17,7 @@ Installing the config
 
 ::
 
-    wget -q --no-check-certificate -O - https://github.com/datakurre/vimconfig/raw/master/setupvim.sh  | bash -eu
+    wget -q --no-check-certificate -O - https://github.com/tojuhaka/vimconfig/raw/master/setupvim.sh  | bash -eu
 
 Influences from
 ---------------
