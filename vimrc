@@ -316,7 +316,7 @@ map <C-e> :py EvaluateCurrentRange()<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 "
 " Open bufexplorer
-nnoremap <Leader>m :LustyBufferExplorer <CR>
+nnoremap <Leader>b :LustyBufferExplorer <CR>
 
 " Opens filesystem explorer at the directory of the current file
 nnoremap <Leader>f :LustyFilesystemExplorerFromHere <CR>
