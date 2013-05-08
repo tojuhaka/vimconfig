@@ -124,7 +124,8 @@ au VimEnter * unmap <Leader>lb
 au VimEnter * unmap <Leader>lj
 au VimEnter * unmap <Leader>lg
 au VimEnter * unmap <Leader>lr
-
+" pymode
+let g:pymode_breakpoint_key = ''
 
 """
 " Window management
