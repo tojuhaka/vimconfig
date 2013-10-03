@@ -1,33 +1,33 @@
 [submodule "bundle/tasklist"]
 	path = bundle/tasklist
-	url = http://github.com/vim-scripts/TaskList.vim.git
+	url = https://github.com/vim-scripts/TaskList.vim.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = http://github.com/ervandew/supertab.git
+	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/vcscommand"]
 	path = bundle/vcscommand
 	url = git://repo.or.cz/vcscommand
 [submodule "bundle/lustyexplorer"]
 	path = bundle/lustyexplorer
-	url = http://github.com/sjbach/lusty.git
+	url = https://github.com/sjbach/lusty.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
-	url = http://github.com/scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
-	url = http://github.com/msanders/snipmate.vim.git
+	url = https://github.com/msanders/snipmate.vim.git
 [submodule "bundle/cucumber"]
 	path = bundle/cucumber
-	url = http://github.com/tpope/vim-cucumber.git
+	url = https://github.com/tpope/vim-cucumber.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
-	url = http://github.com/vim-scripts/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim
 [submodule "bundle/po.vim"]
 	path = bundle/po.vim
-	url = http://github.com/vim-scripts/po.vim--Jelenak.git
+	url = https://github.com/vim-scripts/po.vim--Jelenak.git
 [submodule "bundle/slimux"]
 	path = bundle/slimux
-	url = http://github.com/epeli/slimux.git
+	url = https://github.com/epeli/slimux.git
 [submodule "bundle/robotframework"]
 	path = bundle/robotframework
 	url = https://github.com/mfukar/robotframework-vim.git

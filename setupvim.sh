@@ -12,7 +12,7 @@ backup ~/.vim
 backup ~/.vimrc
 backup ~/.gvimrc
 
-git clone http://github.com/datakurre/vimconfig.git ~/.vim
+git clone https://github.com/tojuhaka/vimconfig.git ~/.vim
 cd ~/.vim
 
 git submodule init
@@ -20,5 +20,5 @@ git submodule update
 git submodule foreach git submodule init
 git submodule foreach git submodule update
 
-git remote add sshorigin git@github.com:datakurre/vimconfig.git
+git remote add sshorigin git@github.com:tojuhaka/vimconfig.git
 make install
