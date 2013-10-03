@@ -36,4 +36,4 @@
 	url = git://github.com/klen/python-mode.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
-	url = git://github.com/sjl/gundo.git
+	url = git://github.com/sjl/gundo.vim.git
