@@ -322,6 +322,9 @@ nnoremap <Leader>b :LustyBufferExplorer <CR>
 " Opens filesystem explorer at the directory of the current file
 nnoremap <Leader>f :LustyFilesystemExplorerFromHere <CR>
 
+" Ack 
+nnoremap <Leader>A :Ack 
+
 " Opens buffer grep
 nnoremap <Leader>g :LustyBufferGrep <CR>
 
