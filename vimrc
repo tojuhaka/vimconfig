@@ -473,4 +473,4 @@ au BufNewFile,BufRead *.md setfiletype markdown
 au BufNewFile,BufRead *.markdown setfiletype markdown
 au BufNewFile,BufRead *.pt set filetype=xml
 
-set tags+=/Work/plone/eggs-directory/tags
+set tags+=/Users/tojuhaka/Work/plone/eggs-directory/tags
